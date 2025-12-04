@@ -1,13 +1,26 @@
-## Inflation-Adjusted Retail Sales Analysis
+Voici la **version propre, formatée, prête à coller directement** dans ton README (mode *Edit → Paste*).
+Aucun texte ajouté autour. Tu peux copier-coller tel quel :
 
-#Author: Mouhcine Riany — © 2025
-#📌 Overview
+---
 
-This project implements a fully-local ETL pipeline that ingests U.S. economic datasets (Retail Sales & CPI), transforms them, adjusts sales for inflation, computes YoY growth, and generates analytical outputs.
+# 🇺🇸 U.S. Economic Data Pipeline
 
-It follows a clean, modular, production-inspired pipeline architecture used in Data Engineering.
+## 🚀 Inflation-Adjusted Retail Sales Analysis
 
-🗂️ Project Architecture
+**Author: Mouhcine Riany — © 2025**
+
+---
+
+## 📌 Overview
+
+This project implements a **fully-local ETL pipeline** that ingests U.S. economic datasets (Retail Sales & CPI), transforms them, adjusts sales for inflation, computes YoY growth, and generates analytical outputs.
+It follows a **clean, modular, production-inspired architecture** used in real Data Engineering pipelines.
+
+---
+
+## 🗂️ Project Architecture
+
+```
 us-economic-data-pipeline/
 │
 ├── data/
@@ -23,8 +36,13 @@ us-economic-data-pipeline/
 │
 ├── .gitignore
 └── README.md
+```
 
-🧠 Pipeline Flow (ETL Diagram)
+---
+
+## 🧠 Pipeline Flow (ETL Diagram)
+
+```mermaid
 flowchart LR
     A[Raw Retail Sales CSV] --> C[Load Module]
     B[Raw CPI CSV] --> C
@@ -36,100 +54,112 @@ flowchart LR
 
     E --> G[Data/processed/merged_inflation_adjusted.csv]
     F --> H[Data/processed/yoy_growth_plot.png]
+```
 
-⚙️ Features
+---
 
-✔️ Retail Sales + CPI monthly ingestion
-✔️ Date normalization
-✔️ Inflation-adjusted retail sales
-✔️ Year-over-year growth calculation
-✔️ Automatic plot generation
-✔️ Clean, modular ETL architecture
-✔️ Ready for production extensions (Docker, Cloud, Airflow)
+## ⚙️ Features
 
-📊 Generated Outputs
-1. Processed Dataset
+* ✔️ Retail Sales + CPI monthly ingestion
+* ✔️ Date normalization
+* ✔️ Inflation-adjusted retail sales
+* ✔️ Year-over-year growth calculation
+* ✔️ Automatic plot generation
+* ✔️ Clean, modular ETL architecture
+* ✔️ Ready for production extensions (Docker, Cloud, Airflow)
 
-📁 data/processed/merged_inflation_adjusted.csv
+---
+
+## 📊 Generated Outputs
+
+### **1. Processed Dataset**
+
+📁 `data/processed/merged_inflation_adjusted.csv`
 Contains:
 
-month
+* month
+* retail_sales
+* cpi
+* inflation_adjusted_sales
+* yoy_growth_pct
 
-retail_sales
+### **2. Analytical Plot**
 
-cpi
-
-inflation_adjusted_sales
-
-yoy_growth_pct
-
-2. Analytical Plot
-
-📈 data/processed/yoy_growth_plot.png
+📈 `data/processed/yoy_growth_plot.png`
 A clean visualization of YoY growth on inflation-adjusted sales.
 
-▶️ Running the Pipeline
-1. Activate virtual environment
+---
+
+## ▶️ Running the Pipeline
+
+### 1. Activate virtual environment
+
+```bash
 source venv/bin/activate
+```
 
-2. Run the main ETL
+### 2. Run the main ETL
+
+```bash
 python src/main.py
+```
 
+**Outputs are generated in:**
+📁 `data/processed/`
 
-After execution, your outputs appear in:
+---
 
-📁 data/processed/
+## 🛠️ Technologies
 
-🛠️ Technologies
-Category	Tools
-Language	Python 3
-ETL	Custom modular architecture
-Data Processing	Pandas
-Visualization	Matplotlib
-Version Control	Git & GitHub
-🎯 Goals of This Project
+| Category        | Tools                       |
+| --------------- | --------------------------- |
+| Language        | Python 3                    |
+| ETL             | Custom modular architecture |
+| Data Processing | Pandas                      |
+| Visualization   | Matplotlib                  |
+| Version Control | Git & GitHub                |
 
-This project showcases real-world Data Engineering skills:
+---
 
-ETL design & modularity
+## 🎯 Goals of This Project
 
-Data cleaning & merging
+This project demonstrates real-world Data Engineering capabilities:
 
-Price index normalization
-
-Economic data analytics
-
-Automated reporting workflow
-
-Software-engineered code structure
+* ETL design & modularity
+* Data cleaning & merging
+* Price index normalization
+* Economic data analytics
+* Automated reporting workflow
+* Software-engineered code structure
 
 Ideal for:
 
-Portfolio building
+* Portfolio building
+* Data/ML Engineering interviews
+* Demonstrating pipeline architecture mastery
 
-Interviews for Data/ML Engineering
+---
 
-Demonstrating pipeline architecture mastery
+## 🚀 Future Improvements
 
-🚀 Future Improvements
+* FRED API integration
+* Pipeline Dockerization
+* CI/CD with GitHub Actions
+* Airflow DAG version
+* Add unit tests (pytest)
+* Add a Streamlit dashboard
 
-FRED API integration
+---
 
-Pipeline Dockerization
-
-CI/CD with GitHub Actions
-
-Airflow DAG version
-
-Add unit tests (pytest)
-
-Add a Streamlit dashboard
-
-🤝 Contributing
+## 🤝 Contributing
 
 Feel free to fork this repository and submit a pull request.
 
-📝 License
+---
 
-© 2025 — Mouhcine Riany
+## 📝 License
+
+© **2025 — Mouhcine Riany**
 Open for educational and portfolio use.
+
+---
